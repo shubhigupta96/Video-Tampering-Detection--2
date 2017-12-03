@@ -1,10 +1,10 @@
 import cv2
-from skimage.measure import compare_mse, compare_nrmse, compare_ssim, compare_psnr
-from PIL import Image
+# from skimage.measure import compare_mse, compare_nrmse, compare_ssim, compare_psnr
+# from PIL import Image
 import sys
 import csv
 
-vidcap = cv2.VideoCapture('VideoSet/akiyo_quif.mp4')
+vidcap = cv2.VideoCapture('test.mp4')
 count=0
 while True:
 	success,image = vidcap.read()

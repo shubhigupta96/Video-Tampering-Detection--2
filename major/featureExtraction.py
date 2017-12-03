@@ -2,7 +2,7 @@ import cv2
 from skimage.measure import compare_mse, compare_nrmse, compare_ssim, compare_psnr
 import csv
 import os
-import random
+from random import randint
 import math
 """
 In Code References
@@ -36,7 +36,7 @@ def getFeatures(im1,im2,isTampered):
 with open('data.csv', 'a') as csvfile:
 	fieldnames = ['mse','psnr','histogram_compare','class']	
 	writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-	writer.writeheader()
+	# writer.writeheader()
 	
 #	Non Tampered Frames
 	i=0
@@ -44,7 +44,7 @@ with open('data.csv', 'a') as csvfile:
 		im1 = 'frames/frame%d.jpg' %i
 		im2 = 'frames/frame%d.jpg' %(i+1) 
 		features = getFeatures(im1,im2,0)
-		print features
+		# print features
 		writer.writerow(features)
 		i+=1
 
@@ -55,7 +55,7 @@ with open('data.csv', 'a') as csvfile:
 		im1 = 'frames/frame%d.jpg' %i
 		im2 = 'frames/frame%d.jpg' %j 
 		features = getFeatures(im1,im2,1)
-		print features
+		# print features
 		writer.writerow(features)
 		i+=1
 
