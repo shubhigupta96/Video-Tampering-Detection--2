@@ -102,7 +102,7 @@ def neuralNetwork(xtrain,ytrain,xtest,ytest):
 	model.add(Dense(8, activation='relu'))
 	model.add(Dense(1, activation='sigmoid'))
 	model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
-	model.fit(x_train,y_train, epochs=150, batch_size=15) 
+	model.fit(x_train,y_train, epochs=10, batch_size=15) 
 	x_test = numpy.array(xtest , dtype = object)
 	y_test = numpy.array(ytest , dtype = object)
 	scores = model.evaluate(x_test, y_test, verbose=0)
@@ -129,7 +129,7 @@ with open("data.csv") as csvfile:
 
 xtest = []
 ytest = []
-with open("test.csv") as csvfile:
+with open("testVideo.csv") as csvfile:
 	reader = csv.DictReader(csvfile)
 	for row in reader:
 		r = []
