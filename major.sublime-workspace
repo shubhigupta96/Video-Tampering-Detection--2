@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"im",
+				"img2"
+			],
+			[
+				"i",
+				"img2"
+			],
+			[
+				"get",
+				"getHistCompare"
+			],
+			[
+				"img",
+				"img2"
+			],
+			[
+				"im1",
+				"img1"
+			],
+			[
+				"y",
+				"y_test"
+			],
+			[
+				"x",
+				"x_test"
+			],
+			[
+				"yt",
+				"ytrain"
+			],
+			[
+				"pred",
+				"predict"
+			],
+			[
+				"xt",
+				"xtest"
+			],
+			[
 				"imp",
 				"improve"
 			],
@@ -284,10 +324,6 @@
 				"sentData"
 			],
 			[
-				"get",
-				"getLongLat"
-			],
-			[
 				"date",
 				"datetime"
 			],
@@ -478,52 +514,16 @@
 			[
 				"End",
 				"endl"
-			],
-			[
-				"fa",
-				"false"
-			],
-			[
-				"gcd",
-				"__gcd"
-			],
-			[
-				"ac",
-				"active_x"
-			],
-			[
-				"b1",
-				"b12"
-			],
-			[
-				"cl",
-				"clust2a"
-			],
-			[
-				"clus",
-				"clust1b"
-			],
-			[
-				"clu",
-				"clust1b"
-			],
-			[
-				"picke",
-				"pickled_algos"
-			],
-			[
-				"x1",
-				"x1-u"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "major/frameExtraction.py",
+			"file": "major/classifier.py",
 			"settings":
 			{
-				"buffer_size": 335,
+				"buffer_size": 4178,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -532,7 +532,15 @@
 			"file": "major/featureExtraction.py",
 			"settings":
 			{
-				"buffer_size": 1546,
+				"buffer_size": 1960,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "major/test.py",
+			"settings":
+			{
+				"buffer_size": 1082,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -578,6 +586,20 @@
 	],
 	"file_history":
 	[
+		"/home/rishabh/Desktop/Major/major/featureExtraction.py",
+		"/home/rishabh/Desktop/Major/major/featureTestExtraction.py",
+		"/home/rishabh/Desktop/Major/major/data.csv",
+		"/home/rishabh/Desktop/Major/major/test.csv",
+		"/home/rishabh/Desktop/Major/major/trainModel.py",
+		"/home/rishabh/Desktop/Major/major/knn.py",
+		"/home/rishabh/Desktop/Major/major/decisiontree.py",
+		"/home/rishabh/Desktop/Major/major/naiveBayes.py",
+		"/home/rishabh/Desktop/Major/major/logisticRegression.py",
+		"/home/rishabh/Desktop/Major/major/randomForest.py",
+		"/home/rishabh/Desktop/Major/major/test.py",
+		"/home/rishabh/Desktop/Major/major/frameExtraction.py",
+		"/home/rishabh/Desktop/Major/major/kmeans.py",
+		"/home/rishabh/Desktop/Major/major/trainCnn.py",
 		"/var/www/html/wp-content/themes/iconic-one/functions.php",
 		"/var/www/html/wp-content/plugins/formatCode.php",
 		"/var/www/html/wp-content/plugins/customPostStatus.php",
@@ -691,25 +713,11 @@
 		"/home/rishabh/Desktop/in03.txt",
 		"/home/rishabh/Desktop/Knuth Sample/Hardik/test.cpp",
 		"/home/rishabh/Desktop/in04.txt",
-		"/home/rishabh/Desktop/Sample_Output.txt",
-		"/home/rishabh/Desktop/Sample.txt",
-		"/home/rishabh/Desktop/Sample_Input.txt",
-		"/home/rishabh/Desktop/Samplein.txt",
-		"/home/rishabh/Desktop/SampleOut.txt",
-		"/home/rishabh/Desktop/out.txt",
-		"/home/rishabh/Desktop/in.txt",
-		"/home/rishabh/Desktop/Knuth Sample/Rishabh/Online/online.cpp",
-		"/home/rishabh/Desktop/Knuth Sample/Aishwarya/answerknuth2.cpp",
-		"/home/rishabh/Desktop/t.cpp",
-		"/home/rishabh/Desktop/Knuth Sample/Akshay/online.cpp",
-		"/home/rishabh/Downloads/ffbda050f8-out01 (1).txt",
-		"/home/rishabh/Desktop/Knuth Sample/Rishabh/Online/in23.txt",
-		"/home/rishabh/Desktop/Knuth Sample/Rishabh/Online/out23.cpp",
-		"/home/rishabh/Desktop/Knuth Sample/Archit/test.cpp"
+		"/home/rishabh/Desktop/Sample_Output.txt"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -723,6 +731,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"mse",
+			"conv",
+			"mse",
 			"improve",
 			"rejection",
 			"delete_published_improvement",
@@ -847,10 +858,7 @@
 			"geek",
 			"is_admin",
 			"Geek",
-			"redirect",
-			"menu",
-			"wp_dashboard_setup",
-			"geek"
+			"redirect"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -858,6 +866,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"model",
 			"delete_published_improve",
 			"edit_published_improve",
 			"read_improve",
@@ -942,47 +951,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "major/frameExtraction.py",
+					"file": "major/classifier.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 335,
+						"buffer_size": 4178,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								261,
-								261
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "major/featureExtraction.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1546,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								141,
-								141
+								2957,
+								2957
 							]
 						],
 						"settings":
@@ -991,10 +972,67 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1428.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "major/featureExtraction.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1960,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 510.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "major/test.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1082,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								249,
+								249
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 102.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1043,7 +1081,7 @@
 	"project": "major.sublime-project",
 	"replace":
 	{
-		"height": 46.0
+		"height": 70.0
 	},
 	"save_all_on_build": true,
 	"select_file":
