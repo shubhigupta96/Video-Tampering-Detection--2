@@ -8,16 +8,16 @@ class UploadFileForm(forms.Form):
 
 class mlForm(forms.Form):
 	algoChoices = [('knn','KNN'),('decisionTree','Decision Tree'),('logReg','Logistic Regression'),('naiveBayes','Naive Bayes'),('randomForest','Random Forest'),('svm','SVM'),('neuralNet','neuralNetwork')]
-	featureChoices = [('mse','Mean Square Error'),('psnr','Peak Signal to Noise Ratio'),('hist_compare','Histogram Compare'),('ssim','Structural Similarity Index'),('entropy','Entropy'),('displacedObjects','Number of Objects Displaced'),('avgObjArea','Average Object Area')]
+	featureChoices = [('mse','Mean Square Error'),('psnr','Peak Signal to Noise Ratio'),('histogram_compare','Histogram Compare'),('ssim','Structural Similarity Index'),('entropy','Entropy'),('displacedObjects','Number of Objects Displaced'),('avgObjArea','Average Object Area')]
 	features = forms.MultipleChoiceField(choices = featureChoices,widget=forms.CheckboxSelectMultiple())  
 	algorithms = forms.ChoiceField(choices=algoChoices,widget=forms.RadioSelect())
 	
 class TamperingForm(forms.Form):
 
-	def __init__(self, value=100000, *args, **kwargs):
-		super(SomeForm, self).__init__(*args, **kwargs)
-		self.fields['start'].max_value = value
-		self.fields['end'].max_value = value
+	# def __init__(self, value=100000, *args, **kwargs):
+	# 	super(TamperingForm, self).__init__(*args, **kwargs)
+	# 	self.fields['start'].max_value = value
+	# 	self.fields['end'].max_value = value
 	start = forms.IntegerField(min_value=0,max_value=100000)
 	end  = forms.IntegerField(min_value=0,max_value=100000)
 	# def clean_recipients(self):

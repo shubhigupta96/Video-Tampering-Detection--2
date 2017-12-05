@@ -23,5 +23,31 @@ def extract():
 	return count
 
 
-def tamperVideo():
-	extract()
+def tamperVideo(st,en):
+	count = extract()
+	videoPath = os.path.join(settings.MEDIA_ROOT,"test.mp4")		
+	if os.path.exists(videoPath):
+		os.remove(videoPath)
+	folderPath = os.path.join(settings.MEDIA_ROOT,'frames')
+
+	imPath = os.path.join(folderPath,'frame0.jpg')
+	print imPath
+	img = cv2.imread(imPath)	
+	print img
+	height , width , layers =  img.shape
+
+	video = cv2.VideoWriter('video.mp4',-1,1,(width,height))
+	i=0
+	st-=1
+	while i<st:
+		imPath = os.path.join(folderPath,'frame%d.jpg'%count)
+		video.write(cv2.imread(imPath)) 	
+		i+=1
+	i=en
+	while i<count:
+		imPath = os.path.join(folderPath,'frame%d.jpg'%count)
+		video.write(cv2.imread(imPath)) 	
+		i+=1
+	
+	cv2.destroyAllWindows()
+	video.release()

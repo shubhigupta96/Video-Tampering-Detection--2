@@ -106,6 +106,13 @@ def neuralNetwork(xtrain,ytrain,xtest,ytest):
 	x_test = numpy.array(xtest , dtype = object)
 	y_test = numpy.array(ytest , dtype = object)
 	scores = model.evaluate(x_test, y_test, verbose=0)
+	ans = model.predict_classes(x_test,batch_size =15)
+	for i in ans:
+		if i==1:
+			print "sorry"
+			return
+	print "hello"
+
 	print("Neural Network Accuracy: %.2f%%" % (scores[1]*100))
 
 

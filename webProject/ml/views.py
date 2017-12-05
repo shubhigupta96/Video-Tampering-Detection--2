@@ -7,6 +7,7 @@ from django.conf import settings
 from django.core.files.base import ContentFile
 import os
 from algorithms.FrameManipulation import extract,tamperVideo
+from algorithms.ModelTraining import getResults
 def home(request):
 	form=UploadFileForm(request.POST or None)
 	if request.method == 'POST':
@@ -35,6 +36,7 @@ def tamper(request):
 		'form' : form,
 		'count': val,
 	}
+	print val,cat
 	if form.is_valid():
 		stValue = form.cleaned_data['start']
 		enValue = form.cleaned_data['end']
@@ -50,15 +52,21 @@ def tamper(request):
 
 
 def mlApproach(request):
-	form = mlForm(request.POST or None)
-	
+	form = mlForm(request.POST or None)	
 	context = {
 		'form' : form,
 	}
 	if form.is_valid():
-		print  form.cleaned_data['algorithms']
-		for val in form.cleaned_data['features']:
-			print  val
+		result = getResults(form.cleaned_data['algorithms'],form.cleaned_data['features'])	
+		ans=''
+		if result==1:
+			ans = 'Video is Tampered'
+		else:
+			ans = 'Video is not Tampered'
+		context = {
+			'result' : ans,
+		}
+		return render(request,'finalPage.html',context)
 	return render(request,'mlPage.html',context)
 
 

@@ -12,7 +12,6 @@ https://stackoverflow.com/questions/45945258/compare-frame-of-video-with-another
 http://scikit-image.org/docs/stable/api/skimage.measure.html
 https://docs.opencv.org/3.2.0/d8/dc8/tutorial_histogram_comparison.html
 """
-count = len(os.walk('frames').next()[2])
 
 # 1. Mse
 def getMse(img1,img2):

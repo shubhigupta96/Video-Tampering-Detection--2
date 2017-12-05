@@ -23,8 +23,9 @@ import ml.views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',ml.views.home),
-    url(r'^mlApproach/$',ml.views.mlApproach),
+    url(r'^tamper/mlApproach/$',ml.views.mlApproach),
     url(r'^watermarking/$',ml.views.watermarking),   
+    url(r'^tamper/$',ml.views.tamper),
 ]
 
 
