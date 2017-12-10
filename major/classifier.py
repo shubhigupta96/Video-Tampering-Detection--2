@@ -11,6 +11,7 @@ from keras.models import Sequential
 from keras.layers import Dense,Dropout
 from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
+from sklearn import preprocessing
 
 
 def decisionTree(xtrain,ytrain,xtest,ytest):
@@ -133,10 +134,13 @@ with open("data.csv") as csvfile:
 		xtrain.append(r)
 		ytrain.append(int(row['class'])) 
 
+xtrain = numpy.array(xtrain,dtype=object)	
+xtrain = preprocessing.normalize(xtrain, norm='l2')
+
 
 xtest = []
 ytest = []
-with open("testVideo.csv") as csvfile:
+with open("test.csv") as csvfile:
 	reader = csv.DictReader(csvfile)
 	for row in reader:
 		r = []
@@ -149,6 +153,10 @@ with open("testVideo.csv") as csvfile:
 		r.append(float(row['displacedObjects'])) 
 		xtest.append(r)
 		ytest.append(int(row['class'])) 
+
+xtest = numpy.array(xtest,dtype=object)	
+xtest = preprocessing.normalize(xtest, norm='l2')
+# print xtest
 
 neuralNetwork(xtrain,ytrain,xtest,ytest)
 decisionTree(xtrain,ytrain,xtest,ytest)

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -6,7 +5,7 @@ from .forms import UploadFileForm,mlForm,TamperingForm
 from django.conf import settings
 from django.core.files.base import ContentFile
 import os
-from algorithms.FrameManipulation import extract,tamperVideo
+from algorithms.FrameManipulation import extract,tamperVideo,getNumberofFrames
 from algorithms.ModelTraining import getResults
 def home(request):
 	form=UploadFileForm(request.POST or None)
@@ -14,14 +13,14 @@ def home(request):
 		form = UploadFileForm(request.POST, request.FILES)
 		if form.is_valid():
 			path = os.path.join(settings.MEDIA_ROOT,"test.mp4")
-			print form.cleaned_data['like']
-
+			
 			lines = form.cleaned_data['file'].readlines()
 
 			with open(path,'w') as destination:
 				for line in lines:
 					destination.write(line)
 			request.session['category'] = form.cleaned_data['like']	
+			extract()
 			return HttpResponseRedirect('tamper')
 	else:
 		form = UploadFileForm()
@@ -29,14 +28,13 @@ def home(request):
 
 
 def tamper(request):
-	val = extract()
+	val = getNumberofFrames()
 	form  = TamperingForm(request.POST or None,val)
 	cat = request.session.get('category')
 	context = {
 		'form' : form,
 		'count': val,
 	}
-	print val,cat
 	if form.is_valid():
 		stValue = form.cleaned_data['start']
 		enValue = form.cleaned_data['end']
@@ -45,7 +43,11 @@ def tamper(request):
 				return HttpResponseRedirect('mlApproach')
 			else:
 				return HttpResponseRedirect('watermarking')
-		tamperVideo(stValue,enValue)
+		val = tamperVideo(stValue,enValue)
+		context = {
+			'form' : form,
+			'count' : val,
+		}
 	return render(request,'tampering.html',context)
 
 

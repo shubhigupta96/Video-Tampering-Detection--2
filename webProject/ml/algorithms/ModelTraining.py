@@ -17,6 +17,7 @@ from keras.models import Sequential
 from keras.layers import Dense,Dropout
 from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
+from sklearn.preprocessing import normalize
 # 1. Mse
 def getMse(img1,img2):
 	return compare_mse(img1,img2)
@@ -82,32 +83,6 @@ def getFeatures(im1,im2):
 	features['entropy']=getEntropy(img1,img2)
 	features['avgObjArea'],features['displacedObjects'] = getAvgObjArea(diffImg)
 	return features
-
-def getTrainingFiles(features):
-	xtrain = []
-	ytrain = []
-	BASE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'algorithms','data.csv')
-	with open(BASE_DIR) as csvfile:
-		reader = csv.DictReader(csvfile)
-		for row in reader:
-			r = []
-			if 'mse' in features:
-				r.append(float(row['mse']))
-			if 'psnr' in features:
-				r.append(float(row['psnr']))
-			if 'histogram_compare' in features:
-				r.append(float(row['histogram_compare']))
-			if 'ssim' in features:
-				r.append(float(row['ssim']))
-			if 'entropy' in features:
-				r.append(float(row['entropy']))
-			if 'avgObjArea' in features:
-				r.append(float(row['avgObjArea']))
-			if 'displacedObjects' in features:
-				r.append(float(row['displacedObjects']))
-			xtrain.append(r)
-			ytrain.append(int(row['class'])) 
-	return xtrain,ytrain
 
 
 def kNN(xtrain,ytrain,xtest):
@@ -206,6 +181,36 @@ def neuralNetwork(xtrain,ytrain,xtest,ytest):
 	return 0
 
 
+def getTrainingFiles(features):
+	xtrain = []
+	ytrain = []
+	BASE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'algorithms','data.csv')
+	with open(BASE_DIR) as csvfile:
+		reader = csv.DictReader(csvfile)
+		for row in reader:
+			r = []
+			if 'mse' in features:
+				r.append(float(row['mse']))
+			if 'psnr' in features:
+				r.append(float(row['psnr']))
+			if 'histogram_compare' in features:
+				r.append(float(row['histogram_compare']))
+			if 'ssim' in features:
+				r.append(float(row['ssim']))
+			if 'entropy' in features:
+				r.append(float(row['entropy']))
+			if 'avgObjArea' in features:
+				r.append(float(row['avgObjArea']))
+			if 'displacedObjects' in features:
+				r.append(float(row['displacedObjects']))
+			xtrain.append(r)
+			ytrain.append(int(row['class']))
+
+	xtrain = numpy.array(xtrain,dtype=object)	
+	xtrain = normalize(xtrain, norm='l2') 
+	return xtrain,ytrain
+
+
 def getResults(algortihm,features):
 	folderPath = os.path.join(settings.MEDIA_ROOT,'frames')
 	count = len(os.walk(folderPath).next()[2])
@@ -233,6 +238,13 @@ def getResults(algortihm,features):
 		testFile.append(feature)
 		i+=1
 	xtrain,ytrain=getTrainingFiles(features)
+	testFile = numpy.array(testFile,dtype=object)	
+	testFile = normalize(testFile, norm='l2') 
+	print numpy.any(numpy.isnan(xtrain))
+	print numpy.any(numpy.isnan(testFile))
+	xtrain[numpy.isnan(xtrain)] = numpy.median(xtrain[~numpy.isnan(xtrain)])
+	testFile[numpy.isnan(testFile)] = numpy.median(testFile[~numpy.isnan(testFile)])
+	
 	if algortihm == 'knn':
 		return kNN(xtrain,ytrain,testFile)
 	elif algortihm == 'decisionTree':
