@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"de",
+				"decode_image"
+			],
+			[
+				"get",
+				"getpixel"
+			],
+			[
+				"v",
+				"value"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"ec",
+				"encoded"
+			],
+			[
+				"X",
+				"X_normalized"
+			],
+			[
 				"ex",
 				"exists"
 			],
@@ -18,10 +50,6 @@
 			[
 				"vide",
 				"videoPath"
-			],
-			[
-				"re",
-				"result"
 			],
 			[
 				"x",
@@ -106,10 +134,6 @@
 			[
 				"dis",
 				"displacedObjects"
-			],
-			[
-				"get",
-				"getMse"
 			],
 			[
 				"gr",
@@ -490,92 +514,16 @@
 			[
 				"BIT",
 				"BITTree2"
-			],
-			[
-				"BI",
-				"BITTree1"
-			],
-			[
-				"inp",
-				"input1"
-			],
-			[
-				"input",
-				"input2"
-			],
-			[
-				"sie",
-				"size"
-			],
-			[
-				"Se",
-				"SieveOfEratosthenes"
-			],
-			[
-				"fr",
-				"fora"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "webProject/ml/views.py",
+			"file": "major/classifier.py",
 			"settings":
 			{
-				"buffer_size": 2024,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "webProject/ml/algorithms/FrameManipulation.py",
-			"settings":
-			{
-				"buffer_size": 1343,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/rishabh/Downloads/DataCompression/goulomb.cpp",
-			"settings":
-			{
-				"buffer_size": 724,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/rishabh/Downloads/DataCompression/tunstall.cpp",
-			"settings":
-			{
-				"buffer_size": 1084,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "@devtest#GfG",
-			"settings":
-			{
-				"buffer_size": 12,
-				"line_ending": "Unix",
-				"name": "@devtest#GfG"
-			}
-		},
-		{
-			"file": "webProject/webProject/urls.py",
-			"settings":
-			{
-				"buffer_size": 1211,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "webProject/ml/algorithms/ModelTraining.py",
-			"settings":
-			{
-				"buffer_size": 6634,
+				"buffer_size": 4544,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -619,22 +567,30 @@
 	[
 		"/home/rishabh/Desktop/Major/webProject",
 		"/home/rishabh/Desktop/Major/webProject/media",
-		"/home/rishabh/Desktop/Major/webProject/media/frames",
 		"/home/rishabh/Desktop/Major/webProject/ml",
 		"/home/rishabh/Desktop/Major/webProject/ml/algorithms",
-		"/home/rishabh/Desktop/Major/webProject/templates",
 		"/home/rishabh/Desktop/Major/webProject/webProject"
 	],
 	"file_history":
 	[
-		"/home/rishabh/Desktop/Major/webProject/templates/mlPage.html",
-		"/home/rishabh/Desktop/Major/webProject/ml/forms.py",
-		"/home/rishabh/Desktop/Major/major/classifier.py",
-		"/home/rishabh/Desktop/Major/webProject/templates/finalPage.html",
+		"/home/rishabh/Desktop/test1.cpp",
+		"/home/rishabh/Desktop/Major/webProject/ml/views.py",
 		"/home/rishabh/Desktop/Major/webProject/webProject/urls.py",
+		"/home/rishabh/Desktop/Major/webProject/media/test.py",
+		"/home/rishabh/Desktop/Major/webProject/ml/algorithms/watermarking.py",
+		"/home/rishabh/Desktop/Stats",
+		"/home/rishabh/Desktop/Major/major/encode.py",
+		"/home/rishabh/Desktop/Major/major/decode.py",
+		"/home/rishabh/Desktop/Major/webProject/ml/forms.py",
+		"/home/rishabh/Desktop/Major/webProject/ml/algorithms/FrameManipulation.py",
+		"/home/rishabh/Desktop/Major/webProject/ml/algorithms/ModelTraining.py",
+		"/home/rishabh/Desktop/Major/major/classifier.py",
+		"/home/rishabh/Downloads/DataCompression/goulomb.cpp",
+		"/home/rishabh/Downloads/DataCompression/tunstall.cpp",
+		"/home/rishabh/Desktop/Major/webProject/templates/mlPage.html",
+		"/home/rishabh/Desktop/Major/webProject/templates/finalPage.html",
 		"/home/rishabh/Desktop/Major/webProject/templates/tampering.html",
 		"/home/rishabh/Desktop/Major/major/featureExtraction.py",
-		"/home/rishabh/Desktop/Major/webProject/ml/algorithms/FrameManipulation.py",
 		"/home/rishabh/Desktop/Major/webProject/ml/algorithms/ExtractFrame.py",
 		"/home/rishabh/Desktop/Major/webProject/templates/base.html",
 		"/home/rishabh/Desktop/Major/major/temp/test.py",
@@ -687,7 +643,6 @@
 		"/var/www/html/wp-login.php",
 		"/var/www/html/wp-includes/post.php",
 		"/var/www/html/wp-admin/edit.php",
-		"/home/rishabh/Desktop/test1.cpp",
 		"/home/rishabh/Desktop/test1.cpp.cpp",
 		"/home/rishabh/Downloads/snakeproj.cpp",
 		"/home/rishabh/Desktop/Internship/intern/classifier.py",
@@ -745,16 +700,7 @@
 		"/home/shubhi/Desktop/Minor/Project/minor/minor/settings.py",
 		"/home/shubhi/Desktop/Minor/Project/minor/sentiment/Analysis/code/combine.py",
 		"/home/shubhi/Desktop/Minor/Project/minor/sentiment/Analysis/code/main.py",
-		"/home/shubhi/Desktop/Minor/Project/minor/sentiment/Analysis/code/bigram.txt",
-		"/home/shubhi/Desktop/Minor/Project/minor/templates/home.html",
-		"/home/shubhi/Desktop/Minor/Project/minor/templates/positive_marker.html",
-		"/home/shubhi/Desktop/Minor/Project/minor/manage.py",
-		"/home/rishabh/Desktop/minor/Project/minor/templates/positive_marker.html",
-		"/home/rishabh/Desktop/minor/Project/minor/templates/tweetView.html",
-		"/home/rishabh/Downloads/v3-utility-library-master/markerclusterer/examples/advanced_example.html",
-		"/home/rishabh/Downloads/v3-utility-library-master/markerclusterer/examples/simple_example.html",
-		"/home/rishabh/Desktop/minor/Project/minor/sentiment/sentiment.py",
-		"/home/rishabh/Desktop/trydjango18/minor_swati/minor/templates/home.html"
+		"/home/shubhi/Desktop/Minor/Project/minor/sentiment/Analysis/code/bigram.txt"
 	],
 	"find":
 	{
@@ -772,6 +718,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"image",
+			"def",
+			"getTrainingFiles",
+			"print",
+			"getNumberofFrames",
 			"isTamp",
 			"getFeatures",
 			"getFe",
@@ -894,12 +845,7 @@
 			"geek",
 			"status",
 			"save",
-			"draft",
-			"save",
-			"draft",
-			"pre_get_posts",
-			"register_post_status",
-			"LoggedIn"
+			"draft"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -987,24 +933,24 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "webProject/ml/views.py",
+					"file": "major/classifier.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2024,
+						"buffer_size": 4544,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1784,
-								1784
+								13,
+								13
 							]
 						],
 						"settings":
@@ -1013,181 +959,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 745.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "webProject/ml/algorithms/FrameManipulation.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1343,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								723,
-								723
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 306.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/rishabh/Downloads/DataCompression/goulomb.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 724,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								281,
-								281
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 204.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/home/rishabh/Downloads/DataCompression/tunstall.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1084,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 459.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								12,
-								12
-							]
-						],
-						"settings":
-						{
-							"auto_name": "@devtest#GfG",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 17.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "webProject/webProject/urls.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1211,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								841,
-								841
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 408.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "webProject/ml/algorithms/ModelTraining.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6634,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2004,
-								2004
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 24.0,
-						"translation.y": 3299.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -1195,7 +970,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 25.0
+		"height": 27.0
 	},
 	"input":
 	{

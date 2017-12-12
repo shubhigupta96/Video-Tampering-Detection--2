@@ -99,21 +99,17 @@ def neuralNetwork(xtrain,ytrain,xtest,ytest):
 	x_train=numpy.array(xtrain, dtype=object)
 	y_train=numpy.array(ytrain, dtype=object)
 	model = Sequential()
-	model.add(Dense(12, input_dim=len(xtrain[0]), activation='relu'))
+	model.add(Dense(16, input_dim=len(xtrain[0]), activation='relu'))
 	model.add(Dense(8, activation='relu'))
+	model.add(Dense(4, activation='relu'))
+	model.add(Dense(2, activation='relu'))
 	model.add(Dense(1, activation='sigmoid'))
 	model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
-	model.fit(x_train,y_train, epochs=10, batch_size=15) 
+	model.fit(x_train,y_train, epochs=50, batch_size=15) 
 	x_test = numpy.array(xtest , dtype = object)
 	y_test = numpy.array(ytest , dtype = object)
 	scores = model.evaluate(x_test, y_test, verbose=0)
 	ans = model.predict_classes(x_test,batch_size =15)
-	for i in ans:
-		if i==1:
-			print "sorry"
-			return
-	print "hello"
-
 	print("Neural Network Accuracy: %.2f%%" % (scores[1]*100))
 
 
@@ -124,7 +120,6 @@ with open("data.csv") as csvfile:
 	reader = csv.DictReader(csvfile)
 	for row in reader:
 		r = []
-		r.append(float(row['mse']))
 		r.append(float(row['psnr']))
 		r.append(float(row['ssim']))
 		r.append(float(row['histogram_compare'])) 
@@ -144,7 +139,6 @@ with open("test.csv") as csvfile:
 	reader = csv.DictReader(csvfile)
 	for row in reader:
 		r = []
-		r.append(float(row['mse']))
 		r.append(float(row['psnr']))
 		r.append(float(row['ssim']))
 		r.append(float(row['histogram_compare'])) 

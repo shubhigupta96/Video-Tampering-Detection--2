@@ -48,7 +48,6 @@ def getEntropy(img1,img2):
 
 # 6. Average Object Area
 # 7. Number of objects displaced
-
 def getAvgObjArea(img):
 	thresh = cv2.threshold(img, 0, 255,
 	cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)[1]
@@ -64,8 +63,6 @@ def getAvgObjArea(img):
 		return 0,0
 	return numofcnts,area/numofcnts
 
-
-
 def getFeatures(im1,im2):
 	img1 = cv2.imread(im1)
 	img2 = cv2.imread(im2)
@@ -73,9 +70,7 @@ def getFeatures(im1,im2):
 	# psnr = getPSNR(mse)
 	# histogram_compare = getHistCompare(img1,img2)
 	ssim,diffImg = getSSIM(img1,img2)
-	
 	features ={}
-
 	features['mse']=getMse(img1,img2)
 	features['psnr']=getPSNR(img1,img2)
 	features['histogram_compare'] = getHistCompare(img1,img2)
@@ -95,7 +90,6 @@ def kNN(xtrain,ytrain,xtest):
 		if i==1:
 			return 1
 	return 0
-	
 
 def decisionTree(xtrain,ytrain,xtest):
 	model = tree.DecisionTreeClassifier(criterion='gini')
@@ -108,7 +102,6 @@ def decisionTree(xtrain,ytrain,xtest):
 			return 1
 	return 0
 	
-
 def logisticRegression(xtrain,ytrain,xtest):
 	model = LogisticRegression()
 	model.fit(xtrain, ytrain)
@@ -119,10 +112,6 @@ def logisticRegression(xtrain,ytrain,xtest):
 		if i==1:
 			return 1
 	return 0
-	
-	
-	print("Logistic Regression Accuracy: %.2f%%" % (accuracy_score(ytest,pred)*100))
-	# print confusion_matrix(ytest,pred)
 
 
 
@@ -136,7 +125,6 @@ def naiveBaiyes(xtrain,ytrain,xtest):
 		if i==1:
 			return 1
 	return 0
-
 
 def randomForest(xtrain,ytrain,xtest):
 	model= RandomForestClassifier()
@@ -162,7 +150,7 @@ def svm(xtrain,ytrain,xtest):
 
 
 
-def neuralNetwork(xtrain,ytrain,xtest,ytest):
+def neuralNetwork(xtrain,ytrain,xtest):
 	x_train=numpy.array(xtrain, dtype=object)
 	y_train=numpy.array(ytrain, dtype=object)
 	model = Sequential()
@@ -172,8 +160,8 @@ def neuralNetwork(xtrain,ytrain,xtest,ytest):
 	model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 	model.fit(x_train,y_train, epochs=10, batch_size=15) 
 	x_test = numpy.array(xtest , dtype = object)
-	y_test = numpy.array(ytest , dtype = object)
-	scores = model.evaluate(x_test, y_test, verbose=0)
+	# y_test = numpy.array(ytest , dtype = object)
+	# scores = model.evaluate(x_test, y_test, verbose=0)
 	pred = model.predict_classes(x_test)
 	for i in pred:
 		if i==1:

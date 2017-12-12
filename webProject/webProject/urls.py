@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',ml.views.home),
     url(r'^tamper/mlApproach/$',ml.views.mlApproach),
-    url(r'^watermarking/$',ml.views.watermarking),   
+    # url(r'^tamper/watermarking/$',ml.views.watermarking),   
     url(r'^tamper/$',ml.views.tamper),
 ]
 
