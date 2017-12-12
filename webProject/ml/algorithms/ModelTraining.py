@@ -205,8 +205,8 @@ def getResults(algortihm,features):
 	i=0
 	testFile = []
 	while i<count-1:
-		im1 = os.path.join(folderPath,'frame%d.jpg'%i)
-		im2 = os.path.join(folderPath,'frame%d.jpg'%(i+1))
+		im1 = os.path.join(folderPath,'frame%d.png'%i)
+		im2 = os.path.join(folderPath,'frame%d.png'%(i+1))
 		featureSet= getFeatures(im1,im2)
 		feature = []
 		if 'mse' in features:

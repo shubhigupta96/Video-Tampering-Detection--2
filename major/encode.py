@@ -7,6 +7,7 @@ def encode_image(img, msg):
     hide the msg string characters as ASCII values
     red value of the first pixel is used for length of string
     """
+
     length = len(msg)
     # limit length of message to 255
     if length > 255:
@@ -41,13 +42,13 @@ count = len(os.walk('frames').next()[2])
 i=0
 while i<count-1:
 	im = Image.open('frames/frame%d.jpg' %i)
-	im.save('png_frames/frame%d.png' %i)	
-	original_image_file = 'png_frames/frame%d.png' %i
-	img = Image.open(original_image_file)
+	# im.save('png_frames/frame%d.png' %i)	
+	# original_image_file = 'png_frames/frame%d.png' %i
+	# img = Image.open(original_image_file)
 	#print(img, img.mode)  # test
 	#encoded_image_file = "enc_" + original_image_file
 	secret_msg = str(i)
-	img_encoded = encode_image(img, secret_msg)
+	img_encoded = encode_image(im, secret_msg)
 	if img_encoded:
 		# save the image with the hidden text
 	        img_encoded.save("watermark_frames/frame%d.png" % i)

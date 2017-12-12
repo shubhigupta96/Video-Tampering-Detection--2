@@ -17,7 +17,7 @@ def extract():
 		success,image = vidcap.read()
 		if success == False:
 			break;
-		imPath = os.path.join(folderPath,'frame%d.jpg'%count)
+		imPath = os.path.join(folderPath,'frame%d.png'%count)
 		cv2.imwrite(imPath, image) 
 		count+=1
 	return count
@@ -30,27 +30,21 @@ def getNumberofFrames():
 
 def tamperVideo(st,en):
 	count = getNumberofFrames()
-	
 	folderPath = os.path.join(settings.MEDIA_ROOT,'frames')
 	j=0
 	i=0
-	st-=1
-	while i<st:
-		imPath = os.path.join(folderPath,'frame%d.jpg'%i)
-		img  = cv2.imread(imPath)
-		imPath = os.path.join(folderPath,'frame%d.jpg'%j)
-		j+=1		 	
-		i+=1
+	j=st
 	i=en
 	while i<count:
-		imPath = os.path.join(folderPath,'frame%d.jpg'%i)
+		imPath = os.path.join(folderPath,'frame%d.png'%i)
 		img  = cv2.imread(imPath)
-		imPath = os.path.join(folderPath,'frame%d.jpg'%j)
+		imPath = os.path.join(folderPath,'frame%d.png'%j)
+		cv2.imwrite(imPath,img)
 		j+=1		 	
 		i+=1
 	ct = j
 	while j<count:
-		imPath = os.path.join(folderPath,'frame%d.jpg'%j)
+		imPath = os.path.join(folderPath,'frame%d.png'%j)
 		os.remove(imPath)
 		j+=1
-	return ct
+	return count

@@ -42,26 +42,24 @@ def addWaterMark():
 	i = 0
 	folderPath = os.path.join(settings.MEDIA_ROOT,'frames')
 	while i < count:
-		imPath = os.path.join(folderPath,'frame%d.jpg'%i)
+		imPath = os.path.join(folderPath,'frame%d.png'%i)
 		img = cv2.imread(imPath)
 		value = "{0:b}".format(i+1)
 		if len(value)<v:
 			value = (v-len(value))*'0'+value
 		enc = encode_image(img,str(value))
-		os.remove(imPath)
-		print cv2.imwrite(imPath,enc)
-		img = cv2.imread(imPath)
-		print decode_image(img)
+		cv2.imwrite(imPath,enc)
 		i+=1
 
 def checkAuthenticity():
 	count = getNumberofFrames()
 	folderPath = os.path.join(settings.MEDIA_ROOT,'frames')
 	for i in range(count):
-		imPath = os.path.join(folderPath,'frame%d.jpg'%i)
+		imPath = os.path.join(folderPath,'frame%d.png'%i)
 		img = cv2.imread(imPath)
 		value = decode_image(img)
 		value = int(value,2)
+		print value
 		if value is not i+1:
 			return 1
 	return 0
